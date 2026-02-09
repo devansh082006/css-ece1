@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon Style Project – Alternative Layout</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f1f3f6}
+
+/* TOP BAR */
+.topbar{
+  background:#131921;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px
+}
+.brand{font-size:22px;font-weight:bold;color:#ff9900}
+.hamburger{font-size:24px;cursor:pointer;display:none}
+
+/* SEARCH ROW */
+.search-row{padding:10px;background:#232f3e}
+.search-row input{width:100%;padding:10px;border:none;border-radius:4px}
+
+/* LAYOUT */
+.container{display:grid;grid-template-columns:220px 1fr;gap:15px;padding:15px}
+
+/* SIDEBAR */
+.sidebar{
+  background:#fff;padding:15px;border-radius:6px
+}
+.sidebar h3{margin-bottom:10px}
+.sidebar ul{list-style:none}
+.sidebar li{padding:8px 0;border-bottom:1px solid #ddd;font-size:14px}
+
+/* PRODUCTS */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:15px
+}
+.product{
+  background:#fff;padding:12px;border-radius:6px;
+  box-shadow:0 1px 4px rgba(0,0,0,.15)
+}
+.product img{width:100%;height:160px;object-fit:contain}
+.product h4{font-size:14px;margin:8px 0}
+.price{color:#b12704;font-weight:bold}
+.product button{
+  margin-top:8px;width:100%;padding:8px;
+  background:#ffd814;border:none;font-weight:bold;cursor:pointer
+}
+
+/* FOOTER */
+footer{background:#131921;color:#fff;text-align:center;padding:15px;margin-top:20px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .container{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .hamburger{display:block}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<!-- Using semantic tags: header, nav, main, section, article, footer -->
+<header class="topbar">
+  <div class="brand">amazon</div>
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+</header>
+
+<!-- SEARCH -->
+<div class="search-row">
+  <input type="text" placeholder="Search products">
+</div>
+
+<main>
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <h3>Categories</h3>
+    <ul>
+      <li>Mobiles</li>
+      <li>Electronics</li>
+      <li>Fashion</li>
+      <li>Laptops</li>
+      <li>Accessories</li>
+    </ul>
+  </aside>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71tIrZqybrL._AC_UL320_.jpg">
+      <h4>boAt Rockerz 450</h4>
+      <div class="price">₹1,499</div>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61VuVU94RnL._AC_UL320_.jpg">
+      <h4>Samsung Galaxy M14</h4>
+      <div class="price">₹11,999</div>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_UL320_.jpg">
+      <h4>HP 15 Laptop</h4>
+      <div class="price">₹56,990</div>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/61L5QgPvgqL._AC_UL320_.jpg">
+      <h4>Fire-Boltt Smartwatch</h4>
+      <div class="price">₹2,199</div>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>© 2025 Amazon Style Project – Alternative Responsive Design</footer>
+
+<script>
+function toggleSidebar(){
+  const sb=document.getElementById('sidebar');
+  sb.style.display = sb.style.display==='block'?'none':'block';
+}
+</script>
+
+</body>
+</html>
